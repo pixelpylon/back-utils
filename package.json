@@ -1,0 +1,21 @@
+{
+  "name": "back-utils",
+  "version": "0.0.1",
+  "description": "Common Utils",
+  "main": "dist/index.js",
+  "typings": "dist/declares/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "author": "Ivan Kosolapov <polzuka@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/7c1def8",
+    "@firebase/firestore-types": "^2.5.1",
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21"
+  }
+}
