@@ -1,5 +1,5 @@
 const axios = require("axios");
-const AxiosApiError = require("./AxiosApiError");
+const {AxiosVerboseError} = require("common-utils");
 
 class RpcClient {
   constructor (url) {
@@ -21,7 +21,7 @@ class RpcClient {
       return {result: data};
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        return {error: new AxiosApiError(error)};
+        return {error: new AxiosVerboseError(error)};
       }
 
       return {error};
@@ -34,7 +34,7 @@ class RpcClient {
       return data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        throw new AxiosApiError(error);
+        throw new AxiosVerboseError(error);
       }
 
       throw error;

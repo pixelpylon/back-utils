@@ -1,10 +1,10 @@
-const AxiosApiError = require("./AxiosApiError")
+const {AxiosVerboseError} = require("common-utils");
 
 const makeApiRequest = async (execute) => {
     try {
         return await execute()
     } catch (error) {
-        throw new AxiosApiError(error)
+        throw new AxiosVerboseError(error)
     }
 }
 

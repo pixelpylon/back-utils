@@ -11,8 +11,3 @@ export abstract class AbstractRequestHandler<TContext, TInput, TResult, TError> 
   abstract onResult(result: TResult): Promise<void>
   abstract onError(error: TError): Promise<void>
 }
-
-export const handleRequest: <THandler extends AbstractRequestHandler<any, any, any, any>, THandleConstructorArgs extends any[]>
-(HandlerConstructor: new(...args: THandleConstructorArgs) => THandler) =>
-  (...args: THandleConstructorArgs) => Promise<void>
-
