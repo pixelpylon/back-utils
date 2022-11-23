@@ -1,8 +1,14 @@
-import {CollectionReference, DocumentReference, Query} from '@firebase/firestore-types'
+import {
+    Firestore,
+    Transaction as FTransaction,
+    CollectionReference,
+    DocumentReference,
+    Query
+} from '@google-cloud/firestore'
 import {Transaction} from './Transaction'
 
 export declare class Repository<T> {
-    constructor (db: object, collectionName: string)
+    constructor (db: Firestore, collectionName: string)
     ref (id?: string): DocumentReference<T>
     set(id: string, data: T): Promise<DocumentReference<T>>
     create(id: string, data: T): Promise<DocumentReference<T>>
@@ -13,5 +19,5 @@ export declare class Repository<T> {
     list(getQuery: (collectionRef: CollectionReference<T>) => Query<T>): Promise<T[]>
     first(getQuery: (collectionRef: CollectionReference<T>) => Query<T>): Promise<T | null>
 
-    tx(tx: object): Transaction<T>
+    tx(tx: FTransaction): Transaction<T>
 }

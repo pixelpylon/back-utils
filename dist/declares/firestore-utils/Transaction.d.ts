@@ -1,11 +1,13 @@
 import {
+  Transaction as FTransaction,
+  Firestore,
   DocumentReference,
   CollectionReference,
   Query
-} from '@firebase/firestore-types'
+} from '@google-cloud/firestore'
 
 export declare class Transaction<T> {
-  constructor (tx: object, db: object, collectionName: string)
+  constructor (tx: FTransaction, db: Firestore, collectionName: string)
   ref (id?: string): DocumentReference<T>
 
   set(id: string, data: T): Promise<DocumentReference<T>>
