@@ -1,7 +1,7 @@
 {
   "name": "back-utils",
   "version": "0.0.4",
-  "description": "Common Utils",
+  "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
   "scripts": {
