@@ -8,6 +8,9 @@ import {
 import {Transaction} from './Transaction'
 
 export declare class Repository<T> {
+    protected db: Firestore
+    protected collectionName: string
+
     constructor (db: Firestore, collectionName: string)
     ref (id?: string): DocumentReference<T>
     set(id: string, data: T): Promise<DocumentReference<T>>
