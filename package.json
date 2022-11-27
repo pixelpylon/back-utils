@@ -1,6 +1,6 @@
 {
   "name": "back-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
@@ -13,9 +13,7 @@
   "author": "Ivan Kosolapov <polzuka@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/firestore": "^6.4.1",
     "axios": "^0.24.0",
-    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.61",
-    "lodash": "^4.17.21"
+    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.61"
   }
 }

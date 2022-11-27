@@ -1,9 +1,5 @@
-const getDateObject = require('./firestore-utils/getDateObject')
-const getStatusObject = require('./firestore-utils/getStatusObject')
-const Repository = require('./firestore-utils/Repository')
-const Transaction = require('./firestore-utils/Transaction')
-const DocumentAccessor = require('./firestore-utils/DocumentAccessor')
-const StatusManager = require('./firestore-utils/StatusManager')
+const getDateObject = require('./db-utils/getDateObject')
+const getStatusObject = require('./db-utils/getStatusObject')
 const {loadRemoteConfig, CONFIG_PROPERTY_TYPES} = require('./loadRemoteConfig')
 const RpcClient = require('./rpc/RpcClient')
 const RpcServer = require('./rpc/RpcServer')
@@ -14,10 +10,6 @@ const handleRequest = require('./request-handling/handleRequest')
 module.exports = {
   getDateObject,
   getStatusObject,
-  Repository,
-  Transaction,
-  DocumentAccessor,
-  StatusManager,
   loadRemoteConfig,
   CONFIG_PROPERTY_TYPES,
   RpcServer,
