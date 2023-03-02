@@ -1,6 +1,8 @@
 const {AxiosVerboseError} = require("common-utils");
 
-const defaultErrorInterceptor = (error) => throw new AxiosVerboseError(error)
+const defaultErrorInterceptor = (error) => {
+    throw new AxiosVerboseError(error)
+}
 
 class AxiosApiClient {
     constructor(axiosInstance, errorInterceptor) {
