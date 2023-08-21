@@ -9,13 +9,19 @@ class AbstractRequestHandler {
         return this._context
     }
 
-    async initializeContext() {
-        this._context = await this.createContext()
+    get user() {
+        if (!this._user) {
+            throw new Error("Handler user isn't initialized")
+        }
+
+        return this._user
     }
 
     async handle() {
         try {
-            await this.initializeContext()
+            this._context = await this.initializeContext()
+            this._user = await this.authenticateUser()
+            await this.authorizeUser()
             const input = this.getInput()
             this.validateInput(input)
             const result = await this.getResult(input)
@@ -30,12 +36,20 @@ class AbstractRequestHandler {
         throw new Error(`Not implemented abstract method getInput()`)
     }
 
+    authenticateUser() {
+        throw new Error(`Not implemented abstract method authenticateUser()`)
+    }
+
+    authorizeUser() {
+        throw new Error(`Not implemented abstract method authorizeUser()`)
+    }
+
     validateInput(input) {
         throw new Error(`Not implemented abstract method validateInput()`)
     }
 
-    createContext() {
-        throw new Error(`Not implemented abstract method createContext()`)
+    initializeContext() {
+        throw new Error(`Not implemented abstract method initializeContext()`)
     }
 
     getResult(input) {
