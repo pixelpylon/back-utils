@@ -6,7 +6,7 @@ class AbstractRpcRequestHandler extends AbstractRequestHandler {
         return this.context.rpc_clients
     }
 
-    async authorizeUser() {
+    async authenticateUser() {
         try {
             const clients = await this.getClients()
             const payload = this.request.headers.authorization.replace('Basic ', '');
@@ -24,6 +24,8 @@ class AbstractRpcRequestHandler extends AbstractRequestHandler {
                 : new RestifiedError('Authorization error');
         }
     }
+
+    async authorizeUser() {}
 
     onResult(result) {
         this.response.json(result)
