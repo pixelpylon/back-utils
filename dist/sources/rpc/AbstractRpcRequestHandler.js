@@ -1,4 +1,5 @@
 const {AbstractRequestHandler} = require("../request-handling/AbstractRequestHandler");
+const {RestifiedError} = require("common-utils");
 
 class AbstractRpcRequestHandler extends AbstractRequestHandler {
     async getClients() {
@@ -31,8 +32,8 @@ class AbstractRpcRequestHandler extends AbstractRequestHandler {
     onError(error) {
         console.error(error);
         return error instanceof RestifiedError
-            ? response.status(error.code).send(error.message)
-            : response.status(500).send('Processing error');
+            ? this.response.status(error.code).send(error.message)
+            : this.response.status(500).send('Processing error');
     }
 }
 
