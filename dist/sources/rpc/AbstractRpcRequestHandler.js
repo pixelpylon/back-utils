@@ -1,4 +1,4 @@
-const {AbstractRequestHandler} = require("../request-handling/AbstractRequestHandler");
+const AbstractRequestHandler = require("../request-handling/AbstractRequestHandler");
 const {RestifiedError} = require("common-utils");
 
 class AbstractRpcRequestHandler extends AbstractRequestHandler {
