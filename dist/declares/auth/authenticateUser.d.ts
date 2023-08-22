@@ -8,9 +8,10 @@ export type User<Role, Permission> = {
   permissions: Permissions<Role, Permission>
 }
 
-export type SsoConfig = {
+type ServiceKey = {serviceKey: string} | {serviceId: string}
+
+export type SsoConfig = ServiceKey & {
   domain: string
-  serviceKey: string
 }
 
 export function authenticateUser<Role, Permission>(ssoConfig: SsoConfig, sessionCookieValue: string): Promise<User<Role, Permission>>

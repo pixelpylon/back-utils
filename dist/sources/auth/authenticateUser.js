@@ -8,13 +8,13 @@ const authenticateUser = async (ssoConfig, sessionCookieValue) => {
         throw new ServiceError(`SSO domain is not passed`)
     }
 
-    if (!ssoConfig.serviceKey) {
+    if (!ssoConfig.serviceKey && !ssoConfig.serviceId) {
         throw new ServiceError(`Service key must be passed`)
     }
 
     const response = await axios.create().post(
         `https://${ssoConfig.domain}/api/iam`,
-        {serviceKey: ssoConfig.serviceKey},
+        {serviceKey: ssoConfig.serviceKey, serviceId: ssoConfig.serviceId},
         {headers: {Cookie: `${SESSION_COOKIE}=${sessionCookieValue}`}}
     )
 
