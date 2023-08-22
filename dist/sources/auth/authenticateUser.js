@@ -1,6 +1,8 @@
 const axios = require("axios");
 const {ServiceError} = require("common-utils");
 
+const SESSION_COOKIE = '__session'
+
 const authenticateUser = async (ssoConfig, sessionCookieValue) => {
     if (!ssoConfig.domain) {
         throw new ServiceError(`SSO domain is not passed`)
@@ -19,4 +21,7 @@ const authenticateUser = async (ssoConfig, sessionCookieValue) => {
     return response.data
 }
 
-module.exports = authenticateUser
+module.exports = {
+    authenticateUser,
+    SESSION_COOKIE,
+}

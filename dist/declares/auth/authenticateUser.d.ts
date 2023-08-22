@@ -14,3 +14,5 @@ export type SsoConfig = {
 }
 
 export function authenticateUser<Role, Permission>(ssoConfig: SsoConfig, sessionCookieValue: string): Promise<User<Role, Permission>>
+
+export const SESSION_COOKIE
