@@ -3,4 +3,5 @@ export {AbstractRpcRequestHandler, RpcClientConfigRecord} from "./rpc/AbstractRp
 export {RpcClient} from "./rpc/RpcClient"
 export {AbstractRequestHandler} from './request-handling/AbstractRequestHandler'
 export {handleRequest} from "./request-handling/handleRequest"
+export {User, SsoConfig, authenticateUser} from './auth/authenticateUser'
 export * from './loadRemoteConfig'
