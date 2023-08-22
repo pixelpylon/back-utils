@@ -6,7 +6,7 @@ const AbstractRpcRequestHandler = require('./rpc/AbstractRpcRequestHandler')
 const AxiosApiClient = require('./axios-api-client/AxiosApiClient')
 const AbstractRequestHandler = require('./request-handling/AbstractRequestHandler')
 const handleRequest = require('./request-handling/handleRequest')
-const authenticateUser = require('./auth/authenticateUser')
+const {authenticateUser, SESSION_COOKIE} = require('./auth/authenticateUser')
 
 module.exports = {
   getDateObject,
@@ -19,4 +19,5 @@ module.exports = {
   AbstractRequestHandler,
   handleRequest,
   authenticateUser,
+  SESSION_COOKIE,
 };
