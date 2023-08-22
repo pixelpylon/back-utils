@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {ServiceError} = require("common-utils");
+const {ServiceError, RestifiedError} = require("common-utils");
 
 const SESSION_COOKIE = '__session'
 
@@ -12,13 +12,25 @@ const authenticateUser = async (ssoConfig, sessionCookieValue) => {
         throw new ServiceError(`Service key must be passed`)
     }
 
-    const response = await axios.create().post(
-        `https://${ssoConfig.domain}/api/iam`,
-        {serviceKey: ssoConfig.serviceKey, serviceId: ssoConfig.serviceId},
-        {headers: {Cookie: `${SESSION_COOKIE}=${sessionCookieValue}`}}
-    )
+    try {
+        const response = await axios.create().post(
+            `https://${ssoConfig.domain}/api/iam`,
+            {serviceKey: ssoConfig.serviceKey, serviceId: ssoConfig.serviceId},
+            {headers: {Cookie: `${SESSION_COOKIE}=${sessionCookieValue}`}}
+        )
 
-    return response.data
+        return response.data
+    } catch (error) {
+        if (error.response.status === 401) {
+            throw new RestifiedError('Unauthorized', 401)
+        }
+
+        if (error.response.status === 403) {
+            throw new RestifiedError('Forbidden', 403)
+        }
+
+        throw error
+    }
 }
 
 module.exports = {
