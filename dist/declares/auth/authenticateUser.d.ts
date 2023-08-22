@@ -1,11 +1,11 @@
-export type Permissions<T> = Record<string, T>
+export type Permissions<Role, Permission> = Record<keyof Role, Permission>
 
-export type User<T> = {
+export type User<Role, Permission> = {
   id: string
   name: string
   email: string
   locations: string[]
-  permissions: Permissions<T>
+  permissions: Permissions<Role, Permission>
 }
 
 export type SsoConfig = {
@@ -13,4 +13,4 @@ export type SsoConfig = {
   serviceKey: string
 }
 
-export function authenticateUser<T>(ssoConfig: SsoConfig, sessionCookieValue: string): Promise<User<T>>
+export function authenticateUser<Role, Permission>(ssoConfig: SsoConfig, sessionCookieValue: string): Promise<User<Role, Permission>>
