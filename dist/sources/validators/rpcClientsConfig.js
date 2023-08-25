@@ -1,8 +1,8 @@
 const {validate} = require('common-utils')
 
-const rpcClients = validate.items(validate.props({
+const rpcClientsConflict = validate.items(validate.props({
   name: validate.isFilled,
   token: validate.isFilled,
 }))
 
-module.exports = {rpcClients}
+module.exports = {rpcClientsConflict}
