@@ -1,6 +1,8 @@
+import {Request, Response} from 'express'
+
 export abstract class AbstractRequestHandler<TContext, TUser, TInput, TResult, TError> {
   private _context?: TContext
-  protected constructor()
+  protected constructor(request: Request, response: Response)
   protected get context(): TContext
 
   protected get user(): TUser

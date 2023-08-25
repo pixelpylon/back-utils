@@ -1,5 +1,3 @@
-import {validate} from 'common-utils'
-
 type ServiceKey = {serviceKey: string} | {serviceId: string}
 
 export type SsoConfig = ServiceKey & {
@@ -13,3 +11,10 @@ export type MailerConfig = {
   fromSender: string
   fromAddress: string
 }
+
+type RpcClientConfigRecord = {
+  name: string
+  token: string
+}
+
+export type RpcClientsConfig = RpcClientConfigRecord[]
