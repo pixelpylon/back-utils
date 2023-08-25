@@ -1,6 +1,6 @@
 {
   "name": "back-utils",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
@@ -12,8 +12,15 @@
   },
   "author": "Ivan Kosolapov <polzuka@gmail.com>",
   "license": "ISC",
+  "peerDependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  },
   "dependencies": {
-    "axios": "^0.24.0",
-    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.65"
+    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.67"
   }
 }

@@ -1,4 +1,4 @@
-const getDateObject = require("./getDateObject");
+const {getDateObject} = require("./getDateObject");
 
 const getStatusObject = (status, error) => {
   return {
@@ -8,4 +8,4 @@ const getStatusObject = (status, error) => {
   };
 };
 
-module.exports = getStatusObject;
+module.exports = {getStatusObject};

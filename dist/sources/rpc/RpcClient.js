@@ -46,6 +46,6 @@ RpcClient.new = (url) => {
   return new RpcClient(url);
 };
 
-module.exports = RpcClient;
+module.exports = {RpcClient};
 
 

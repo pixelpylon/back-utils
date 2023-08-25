@@ -63,4 +63,4 @@ class AbstractRequestHandler {
     }
 }
 
-module.exports = AbstractRequestHandler
+module.exports = {AbstractRequestHandler}

@@ -5,4 +5,4 @@ const handleRequest = (HandlerConstructor) => {
   }
 }
 
-module.exports = handleRequest
+module.exports = {handleRequest}

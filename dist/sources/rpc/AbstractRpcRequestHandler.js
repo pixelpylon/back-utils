@@ -39,4 +39,4 @@ class AbstractRpcRequestHandler extends AbstractRequestHandler {
     }
 }
 
-module.exports = AbstractRpcRequestHandler
+module.exports = {AbstractRpcRequestHandler}

@@ -6,4 +6,4 @@ const getDateObject = (at) => {
   };
 };
 
-module.exports = getDateObject;
+module.exports = {getDateObject};

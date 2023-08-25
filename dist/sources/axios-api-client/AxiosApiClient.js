@@ -39,4 +39,4 @@ class AxiosApiClient {
     }
 }
 
-module.exports = AxiosApiClient
+module.exports = {AxiosApiClient}
