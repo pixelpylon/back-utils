@@ -1,4 +1,5 @@
 const {Router} = require("express")
+const {handleRequest} = require("./handleRequest")
 
 const entityRouter = (entityName, handlers) => {
     const router = Router()
