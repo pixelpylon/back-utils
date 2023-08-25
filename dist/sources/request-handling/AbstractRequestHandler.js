@@ -1,5 +1,8 @@
 class AbstractRequestHandler {
-    constructor() {}
+    constructor(request, response) {
+        this.request = request
+        this.response = response
+    }
 
     get context() {
         if (!this._context) {
