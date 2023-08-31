@@ -1,5 +1,5 @@
 const {getDateObject, getStatusObject} = require('./db-utils')
-const {loadRemoteConfig, CONFIG_PROPERTY_TYPES, getLimitAndOffset} = require('./utils')
+const {loadRemoteConfig, CONFIG_PROPERTY_TYPES, getLimitAndOffset, getListParams} = require('./utils')
 const {RpcClient, AbstractRpcRequestHandler} = require('./rpc')
 const {AxiosApiClient} = require('./axios-api-client')
 const {AbstractRequestHandler, handleRequest, entityRouter} = require('./request-handling')
@@ -12,6 +12,7 @@ module.exports = {
   loadRemoteConfig,
   CONFIG_PROPERTY_TYPES,
   getLimitAndOffset,
+  getListParams,
   AbstractRpcRequestHandler,
   RpcClient,
   AxiosApiClient,

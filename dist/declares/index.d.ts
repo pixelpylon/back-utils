@@ -4,6 +4,13 @@ export {RpcClient} from "./rpc/RpcClient"
 export {AbstractRequestHandler} from './request-handling/AbstractRequestHandler'
 export {handleRequest, entityRouter} from "./request-handling"
 export {authenticateUser, SESSION_COOKIE} from './auth/authenticateUser'
-export {CONFIG_PROPERTY_TYPES, IRemoteConfigTemplate, loadRemoteConfig, PropertyDescriptor, getLimitAndOffset} from './utils'
+export {
+  CONFIG_PROPERTY_TYPES,
+  IRemoteConfigTemplate,
+  loadRemoteConfig,
+  PropertyDescriptor,
+  getLimitAndOffset,
+  getListParams,
+} from './utils'
 export * as validators from './validators'
 export * from './types'
