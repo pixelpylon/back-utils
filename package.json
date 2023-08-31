@@ -1,6 +1,6 @@
 {
   "name": "back-utils",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
@@ -21,6 +21,6 @@
     "express": "^4.18.2"
   },
   "dependencies": {
-    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.71"
+    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.72"
   }
 }
