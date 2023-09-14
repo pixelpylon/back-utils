@@ -1,4 +1,4 @@
-const {AxiosVerboseError} = require("common-utils");
+const {AxiosVerboseError} = require("@exp1/common-utils");
 
 const defaultErrorInterceptor = (error) => {
     throw new AxiosVerboseError(error)

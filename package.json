@@ -1,11 +1,11 @@
 {
-  "name": "back-utils",
-  "version": "0.0.18",
+  "name": "@exp1/back-utils",
+  "version": "0.0.19",
   "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "artifactregistry-login": "npx google-artifactregistry-auth"
   },
   "engines": {
     "node": ">=12"
@@ -21,6 +21,6 @@
     "express": "^4.18.2"
   },
   "dependencies": {
-    "common-utils": "https://github.com/pixelpylon/common-utils/tarball/0.0.73"
+    "@exp1/common-utils": "^0.0.73"
   }
 }

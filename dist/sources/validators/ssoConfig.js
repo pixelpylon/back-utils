@@ -1,4 +1,4 @@
-const {validate} = require('common-utils')
+const {validate} = require('@exp1/common-utils')
 
 const ssoConfig = validate.props({
   domain: validate.isFilled,

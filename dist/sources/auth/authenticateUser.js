@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {ServiceError, RestifiedError} = require("common-utils");
+const {ServiceError, RestifiedError} = require("@exp1/common-utils");
 
 const SESSION_COOKIE = '__session'
 

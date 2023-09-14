@@ -1,4 +1,4 @@
-import {Validator} from 'common-utils'
+import {Validator} from '@exp1/common-utils'
 
 type CONFIG_PROPERTY_TYPES_UNION = 'string' | 'int' | 'json' | 'bool'
 

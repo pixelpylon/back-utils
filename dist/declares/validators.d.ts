@@ -1,4 +1,4 @@
-import { Validator } from "common-utils"
+import { Validator } from "@exp1/common-utils"
 import {MailerConfig, RpcClientsConfig, SsoConfig} from './types'
 
 export const mailerConfig: Validator<MailerConfig>

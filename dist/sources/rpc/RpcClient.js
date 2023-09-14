@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {AxiosVerboseError} = require("common-utils");
+const {AxiosVerboseError} = require("@exp1/common-utils");
 
 class RpcClient {
   constructor (url) {
