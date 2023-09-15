@@ -9,7 +9,6 @@ export {
   IRemoteConfigTemplate,
   loadRemoteConfig,
   PropertyDescriptor,
-  getLimitAndOffset,
   getListParams,
 } from './utils'
 export * as validators from './validators'
