@@ -1,4 +1,4 @@
 import { Query } from 'express-serve-static-core'
-import {EntityListParams} from '@exp1/common-utils'
+import {ListParams} from '@exp1/common-utils'
 
-export function getListParams<Entity>(query: Query): EntityListParams<Entity>
+export function getListParams(query: Query): ListParams
