@@ -12,4 +12,4 @@ type Handlers = {
   Remove?: HandlerConstructor
 }
 
-export function entityRouter(entityName: string, handlers: Handlers): Router
+export function entityRouter(handlers: Handlers): Router
