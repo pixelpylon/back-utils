@@ -1,12 +1,6 @@
-import {Request, Response} from 'express'
-
-export abstract class AbstractRequestHandler<TContext, TUser, TInput, TResult, TError> {
-  readonly request: Request
-  readonly response: Response
+export abstract class AbstractJobHandler<TContext, TUser, TInput, TResult, TError> {
   private _context?: TContext
-  constructor(request: Request, response: Response)
   protected get context(): TContext
-
   protected get user(): TUser
   handle(): Promise<void>
   abstract getInput(): TInput

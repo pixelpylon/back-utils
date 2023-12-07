@@ -1,4 +1,4 @@
-const {AbstractRequestHandler} = require("../request-handling/AbstractRequestHandler");
+const {AbstractRequestHandler} = require("../job-handling/AbstractRequestHandler");
 const {RestifiedError} = require("@exp1/common-utils");
 
 class AbstractRpcRequestHandler extends AbstractRequestHandler {

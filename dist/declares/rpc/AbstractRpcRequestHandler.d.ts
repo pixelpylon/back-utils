@@ -1,4 +1,4 @@
-import {AbstractRequestHandler} from '../request-handling'
+import {AbstractRequestHandler} from '../job-handling'
 
 export type RpcClientConfigRecord = {
   name: string

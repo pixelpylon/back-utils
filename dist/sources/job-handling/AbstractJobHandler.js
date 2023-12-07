@@ -1,9 +1,4 @@
-class AbstractRequestHandler {
-    constructor(request, response) {
-        this.request = request
-        this.response = response
-    }
-
+class AbstractJobHandler {
     get context() {
         if (!this._context) {
             throw new Error("Handler context isn't initialized")
@@ -66,4 +61,4 @@ class AbstractRequestHandler {
     }
 }
 
-module.exports = {AbstractRequestHandler}
+module.exports = {AbstractJobHandler}
