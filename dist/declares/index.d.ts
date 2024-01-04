@@ -5,8 +5,7 @@ export {handleRequest, entityRouter, AbstractRequestHandler, handleTask, Abstrac
 export {authenticateUser, SESSION_COOKIE} from './auth/authenticateUser'
 export {
   CONFIG_PROPERTY_TYPES,
-  IRemoteConfigTemplate,
-  loadRemoteConfig,
+  loadConfigFromEnvironment,
   PropertyDescriptor,
   getListParams,
 } from './utils'

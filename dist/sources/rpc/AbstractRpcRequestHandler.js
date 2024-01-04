@@ -3,7 +3,7 @@ const {RestifiedError} = require("@exp1/common-utils");
 
 class AbstractRpcRequestHandler extends AbstractRequestHandler {
     async getClients() {
-        return this.context.rpc_clients
+        return this.context.RPC_CLIENTS
     }
 
     async authenticateUser() {

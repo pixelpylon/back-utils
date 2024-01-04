@@ -1,5 +1,5 @@
 const {getDateObject, getStatusObject} = require('./db-utils')
-const {loadRemoteConfig, CONFIG_PROPERTY_TYPES, getListParams} = require('./utils')
+const {loadConfigFromEnvironment, CONFIG_PROPERTY_TYPES, getListParams} = require('./utils')
 const {RpcClient, AbstractRpcRequestHandler} = require('./rpc')
 const {AxiosApiClient} = require('./axios-api-client')
 const {AbstractRequestHandler, handleRequest, entityRouter, AbstractTaskHandler, handleTask} = require('./job-handling')
@@ -9,7 +9,7 @@ const validators = require('./validators')
 module.exports = {
   getDateObject,
   getStatusObject,
-  loadRemoteConfig,
+  loadConfigFromEnvironment,
   CONFIG_PROPERTY_TYPES,
   getListParams,
   AbstractRpcRequestHandler,

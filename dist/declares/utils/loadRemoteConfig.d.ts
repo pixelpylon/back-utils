@@ -16,11 +16,7 @@ export type ExtendedPropertyDescriptor = {
 
 export type PropertyDescriptor = CONFIG_PROPERTY_TYPES_UNION | ExtendedPropertyDescriptor
 
-export interface IRemoteConfigTemplate {
-    [key: string]: any
-}
+export declare function loadConfigFromEnvironment<T>(
+    descriptor: Record<string, PropertyDescriptor>
+): T
 
-export declare function loadRemoteConfig(
-    config: object,
-    descriptor: {[key: string]: PropertyDescriptor}
-): Promise<IRemoteConfigTemplate>

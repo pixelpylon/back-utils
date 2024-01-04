@@ -6,7 +6,7 @@ export type RpcClientConfigRecord = {
 }
 
 type Context = {
-  rpc_clients: RpcClientConfigRecord[]
+  RPC_CLIENTS: RpcClientConfigRecord[]
 }
 
 export abstract class AbstractRpcRequestHandler<TContext extends Context, TInput, TResult, TError>

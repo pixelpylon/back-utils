@@ -40,11 +40,11 @@ function adaptValue (key, value, propertyDescriptor) {
 }
 
 function getValue (template, key) {
-    const parameter = template.parameters[key];
-    if (parameter === undefined) {
+    const value = template[key];
+    if (value === undefined) {
         throw new Error(`Missing config property`);
     }
-    return parameter.defaultValue.value;
+    return value;
 }
 
 function loadProperty (key, template, descriptor) {
@@ -58,24 +58,21 @@ function loadProperty (key, template, descriptor) {
     }
 }
 
-async function loadRemoteConfig(config, descriptor) {
-    const template = await config.getTemplate();
-    if (!template) throw new Error("Error fetching remote config template");
-
+function loadConfigFromEnvironment(descriptor) {
     const result = {};
 
     try {
         for (const key of Object.keys(descriptor)) {
-            result[key] = loadProperty(key, template, descriptor);
+            result[key] = loadProperty(key, process.env, descriptor);
         }
         return result;
     } catch (error) {
         console.error(error);
-        throw new Error(`Template parsing error: ${error.message}`);
+        throw new Error(`Environment variable parsing error: ${error.message}`);
     }
 }
 
 module.exports = {
     CONFIG_PROPERTY_TYPES,
-    loadRemoteConfig,
-};
+    loadConfigFromEnvironment,
+}

@@ -1,2 +1,2 @@
-export {loadRemoteConfig, CONFIG_PROPERTY_TYPES, PropertyDescriptor, IRemoteConfigTemplate} from './loadRemoteConfig'
+export {loadConfigFromEnvironment, CONFIG_PROPERTY_TYPES, PropertyDescriptor} from './loadRemoteConfig'
 export {getListParams} from './getListParams'
