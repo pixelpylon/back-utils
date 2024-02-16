@@ -3,8 +3,8 @@ export abstract class AbstractJobHandler<TContext, TUser, TInput, TResult, TErro
   protected get context(): TContext
   protected get user(): TUser
   handle(): Promise<void>
-  abstract getInput(): TInput
-  abstract validateInput(input: TInput): void
+  abstract getInput(): any
+  abstract validateInput(input: any): void
   abstract initializeContext(): Promise<TContext>
   abstract authenticateUser(): Promise<TUser>
   abstract authorizeUser(): void
