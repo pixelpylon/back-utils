@@ -1,51 +1,47 @@
-const axios = require("axios");
-const {AxiosVerboseError} = require("@exp1/common-utils");
+const axios = require('axios')
+const {AxiosVerboseError} = require('@exp1/common-utils')
 
 class RpcClient {
-  constructor (url) {
-    const parsedUrl = new URL(url);
+  constructor(url) {
+    const parsedUrl = new URL(url)
 
-    const payload = Buffer
-      .from(`${parsedUrl.username}:${decodeURIComponent(parsedUrl.password)}`)
-      .toString('base64');
+    const payload = Buffer.from(`${parsedUrl.username}:${decodeURIComponent(parsedUrl.password)}`).toString('base64')
 
     this.instance = axios.create({
       baseURL: `${parsedUrl.protocol}//${parsedUrl.host}`,
-      headers: {Authorization: `Basic ${payload}`}
-    });
+      headers: {Authorization: `Basic ${payload}`},
+    })
   }
 
-  async safeCall (method, params) {
+  async safeCall(method, params) {
     try {
-      const {data} = await this.instance.post(method, params);
-      return {result: data};
+      const {data} = await this.instance.post(method, params)
+      return {result: data}
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        return {error: new AxiosVerboseError(error)};
+        return {error: new AxiosVerboseError(error)}
       }
 
-      return {error};
+      return {error}
     }
   }
 
-  async unsafeCall (method, params) {
+  async unsafeCall(method, params) {
     try {
-      const {data} = await this.instance.post(method, params);
-      return data;
+      const {data} = await this.instance.post(method, params)
+      return data
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        throw new AxiosVerboseError(error);
+        throw new AxiosVerboseError(error)
       }
 
-      throw error;
+      throw error
     }
   }
 }
 
 RpcClient.new = (url) => {
-  return new RpcClient(url);
-};
+  return new RpcClient(url)
+}
 
-module.exports = {RpcClient};
-
-
+module.exports = {RpcClient}

@@ -1,6 +1,6 @@
-const {authenticateUser, SESSION_COOKIE} = require("./authenticateUser")
+const {authenticateUser, SESSION_COOKIE} = require('./authenticateUser')
 
 module.exports = {
-    authenticateUser,
-    SESSION_COOKIE,
+  authenticateUser,
+  SESSION_COOKIE,
 }

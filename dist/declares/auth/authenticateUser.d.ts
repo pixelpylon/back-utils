@@ -1,6 +1,6 @@
-import {SsoConfig} from '../types'
 import {User} from '@exp1/common-utils'
+import {SsoConfig} from '../types'
 
 export function authenticateUser(ssoConfig: SsoConfig, sessionCookieValue: string): Promise<User>
 
-export const SESSION_COOKIE: string
+export declare const SESSION_COOKIE: string

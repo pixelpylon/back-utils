@@ -1,9 +1,8 @@
-import { Validator, ListParams, FirstParams, PaginatedListParams } from "@exp1/common-utils"
-import {MailerConfig, RpcClientsConfig, SsoConfig} from './types'
+import {Validator} from '@exp1/common-utils'
 
-export const mailerConfig: Validator<MailerConfig>
-export const ssoConfig: Validator<SsoConfig>
-export const rpcClientsConfig: Validator<RpcClientsConfig>
-export const firstParams: Validator<FirstParams>
-export const listParams: Validator<ListParams>
-export const paginatedListParams: Validator<PaginatedListParams>
+export declare const mailerConfig: Validator
+export declare const ssoConfig: Validator
+export declare const rpcClientsConfig: Validator
+export declare const firstParams: Validator
+export declare const listParams: Validator
+export declare const paginatedListParams: Validator

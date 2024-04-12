@@ -1,8 +1,13 @@
 import {Request, Response, Router} from 'express'
 import {AbstractRequestHandler} from './AbstractRequestHandler'
 
-
-type HandlerConstructor = new (request: Request, response: Response) => AbstractRequestHandler<unknown, unknown, unknown, unknown, unknown>
+type HandlerConstructor = new (request: Request, response: Response) => AbstractRequestHandler<
+  unknown,
+  unknown,
+  unknown,
+  unknown,
+  unknown
+>
 
 type Handlers = {
   Create?: HandlerConstructor

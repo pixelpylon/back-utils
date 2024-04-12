@@ -2,7 +2,7 @@ const {CONFIG_PROPERTY_TYPES, loadConfigFromEnvironment} = require('./loadRemote
 const {getListParams} = require('./getListParams')
 
 module.exports = {
-    CONFIG_PROPERTY_TYPES,
-    loadConfigFromEnvironment,
-    getListParams,
+  CONFIG_PROPERTY_TYPES,
+  loadConfigFromEnvironment,
+  getListParams,
 }

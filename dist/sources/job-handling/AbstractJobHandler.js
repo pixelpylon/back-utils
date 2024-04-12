@@ -1,64 +1,64 @@
 class AbstractJobHandler {
-    get context() {
-        if (!this._context) {
-            throw new Error("Handler context isn't initialized")
-        }
-
-        return this._context
+  get context() {
+    if (!this._context) {
+      throw new Error("Handler context isn't initialized")
     }
 
-    get user() {
-        if (!this._user) {
-            throw new Error("Handler user isn't initialized")
-        }
+    return this._context
+  }
 
-        return this._user
+  get user() {
+    if (!this._user) {
+      throw new Error("Handler user isn't initialized")
     }
 
-    async handle() {
-        try {
-            this._context = await this.initializeContext()
-            this._user = await this.authenticateUser()
-            await this.authorizeUser()
-            const input = this.getInput()
-            this.validateInput(input)
-            const result = await this.getResult(input)
-            await this.onResult(result)
-            return result
-        } catch (error) {
-            await this.onError(error)
-        }
-    }
+    return this._user
+  }
 
-    getInput() {
-        throw new Error(`Not implemented abstract method getInput()`)
+  async handle() {
+    try {
+      this._context = await this.initializeContext()
+      this._user = await this.authenticateUser()
+      await this.authorizeUser()
+      const input = this.getInput()
+      this.validateInput(input)
+      const result = await this.getResult(input)
+      await this.onResult(result)
+      return result
+    } catch (error) {
+      await this.onError(error)
     }
+  }
 
-    authenticateUser() {
-        throw new Error(`Not implemented abstract method authenticateUser()`)
-    }
+  getInput() {
+    throw new Error(`Not implemented abstract method getInput()`)
+  }
 
-    authorizeUser() {
-        throw new Error(`Not implemented abstract method authorizeUser()`)
-    }
+  authenticateUser() {
+    throw new Error(`Not implemented abstract method authenticateUser()`)
+  }
 
-    validateInput(input) {
-        throw new Error(`Not implemented abstract method validateInput()`)
-    }
+  authorizeUser() {
+    throw new Error(`Not implemented abstract method authorizeUser()`)
+  }
 
-    initializeContext() {
-        throw new Error(`Not implemented abstract method initializeContext()`)
-    }
+  validateInput(input) {
+    throw new Error(`Not implemented abstract method validateInput()`)
+  }
 
-    getResult(input) {
-        throw new Error(`Not implemented abstract method getResult()`)
-    }
+  initializeContext() {
+    throw new Error(`Not implemented abstract method initializeContext()`)
+  }
 
-    onResult(result) {}
+  getResult(input) {
+    throw new Error(`Not implemented abstract method getResult()`)
+  }
 
-    onError(error) {
-        throw new Error(`Not implemented abstract method onError()`)
-    }
+  onResult(result) {}
+
+  onError(error) {
+    throw new Error(`Not implemented abstract method onError()`)
+  }
 }
 
 module.exports = {AbstractJobHandler}
