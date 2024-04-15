@@ -1,12 +1,13 @@
 {
   "name": "@exp1/back-utils",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Backend Utils",
   "main": "dist/sources/index.js",
   "typings": "dist/declares/index.d.ts",
   "scripts": {
     "prepare": "husky install",
-    "artifactregistry-login": "npx google-artifactregistry-auth"
+    "artifactregistry-login": "npx google-artifactregistry-auth",
+    "publish": "bash -c 'publish () { git add -A && git ci -m \"${0:=$(npm pkg get version)}\" && git tag $(npm pkg get version) && git push && git push --tags; }; publish'"
   },
   "engines": {
     "node": ">=12"
