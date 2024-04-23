@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 
 export class AxiosApiClient {

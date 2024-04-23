@@ -34,11 +34,11 @@ class AbstractJobHandler {
     throw new Error(`Not implemented abstract method getInput()`)
   }
 
-  authenticateUser() {
+  async authenticateUser() {
     throw new Error(`Not implemented abstract method authenticateUser()`)
   }
 
-  authorizeUser() {
+  async authorizeUser() {
     throw new Error(`Not implemented abstract method authorizeUser()`)
   }
 
@@ -46,17 +46,17 @@ class AbstractJobHandler {
     throw new Error(`Not implemented abstract method validateInput()`)
   }
 
-  initializeContext() {
+  async initializeContext() {
     throw new Error(`Not implemented abstract method initializeContext()`)
   }
 
-  getResult(input) {
+  async getResult(input) {
     throw new Error(`Not implemented abstract method getResult()`)
   }
 
-  onResult(result) {}
+  async onResult(result) {}
 
-  onError(error) {
+  async onError(error) {
     throw new Error(`Not implemented abstract method onError()`)
   }
 }

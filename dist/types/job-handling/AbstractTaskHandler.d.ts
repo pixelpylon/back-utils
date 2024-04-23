@@ -7,6 +7,8 @@ export abstract class AbstractTaskHandler<TContext, TUser, TInput, TResult, TErr
   TResult,
   TError
 > {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   readonly event: any // FIXME to EventContext from firebase-functions
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(event: any)
 }

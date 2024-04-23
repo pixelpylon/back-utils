@@ -13,7 +13,7 @@ export abstract class AbstractRpcRequestHandler<
   TContext extends Context,
   TInput,
   TResult,
-  TError
+  TError,
 > extends AbstractRequestHandler<TContext, RpcClientConfigRecord, TInput, TResult, TError> {
   getClients(): RpcClientConfigRecord[]
   authorizeUser(): Promise<void>

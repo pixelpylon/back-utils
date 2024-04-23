@@ -3,7 +3,9 @@ export abstract class AbstractJobHandler<TContext, TUser, TInput, TResult, TErro
   protected get context(): TContext
   protected get user(): TUser
   handle(): Promise<void>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   abstract getInput(): any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   abstract validateInput(input: any): void
   abstract initializeContext(): Promise<TContext>
   abstract authenticateUser(): Promise<TUser>
